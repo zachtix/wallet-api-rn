@@ -4,8 +4,6 @@ export async function getTransactionsByUserId(req, res) {
   try {
     const { user_id } = req.params;
 
-    console.info(user_id);
-
     const transactions = await sql`
         SELECT * FROM transactions
         WHERE user_id = ${user_id}
